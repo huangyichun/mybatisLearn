@@ -20,4 +20,8 @@ public interface UserMapper {
     int insert3(SysUser sysUser);
 
     int updateById(SysUser sysUser);
+
+    int deleteById(Long id);
+
+    int deleteById(SysUser user);
 }
