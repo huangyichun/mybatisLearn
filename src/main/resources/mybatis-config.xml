@@ -5,7 +5,7 @@
        <!--logImpl属性制定使用Log4J输出日志-->
        <setting name="logImpl" value="LOG4J"/>
    </settings>
-    <!--设置别名-->
+    <!--设置别名,在返回类中原来需要报名加类名，现在只需类名-->
     <typeAliases>
         <package name="tk.mybatis.simple.model"/>
     </typeAliases>
@@ -23,6 +23,12 @@
     </environments>
 
     <mappers>
+        <!--<package name="tk.mybatis.simple.mapper"/>-->
         <mapper resource="tk/mybatis/simple/mapper/CountryMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/UserMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/RoleMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/PrivilegeMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/UserRoleMapper.xml"/>
+        <mapper resource="tk/mybatis/simple/mapper/RolePrivilegeMapper.xml"/>
     </mappers>
 </configuration>
