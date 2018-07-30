@@ -140,4 +140,24 @@ public class UserMapperTest extends BaseMapperTest {
             sqlSession.close();
         }
     }
+
+    @Test
+    public void testDeleteById(){
+        SqlSession sqlSession = getSqlSession();
+        try{
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            SysUser user = userMapper.selectById(1L);
+            Assert.assertNotNull(user);
+            Assert.assertEquals(1, userMapper.deleteById(1L));
+            Assert.assertNull(userMapper.selectById(1L));
+
+            SysUser user1 = userMapper.selectById(1001L);
+            Assert.assertNotNull(user1);
+            Assert.assertEquals(1, userMapper.deleteById(user1));
+            Assert.assertNull(userMapper.selectById(1001L));
+        }finally {
+            sqlSession.rollback();
+            sqlSession.close();
+        }
+    }
 }
