@@ -16,4 +16,6 @@ public interface UserMapper {
     int insert(SysUser sysUser);
 
     int insert2(SysUser sysUser);
+
+    int insert3(SysUser sysUser);
 }
